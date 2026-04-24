@@ -212,7 +212,7 @@ nav {
 
 /* Tech Stack */
 .tech {
-    padding: 100px 0;
+    padding: 100px 0 150px 0;
     background: #f8fafc;
 }
 
@@ -236,7 +236,7 @@ nav {
     gap: 4rem;
     margin-top: 3rem;
     flex-wrap: wrap;
-    height: 40px;
+    align-items: center;
 }
 
 .tech-logo, .tech-icon {
@@ -388,6 +388,15 @@ footer {
 
     .tech-logos {
         gap: 2rem;
+        margin-top: 2rem;
+    }
+    
+    .tech-logo, .tech-icon {
+        height: 60px;
+    }
+    
+    .maptiler-logo {
+        height: 70px !important;
     }
 }
 /* Galerie Photos */
@@ -422,11 +431,17 @@ footer {
     font-weight: 400;
 }
 
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    margin-bottom: 4rem;
+    margin-bottom: 0;
 }
 
 .gallery-item {
@@ -439,6 +454,7 @@ footer {
     box-shadow: 0 20px 60px rgba(0,0,0,0.15);
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     cursor: pointer;
+    width: 100%;
 }
 
 .gallery-item::before {
@@ -512,8 +528,9 @@ footer {
 /* Responsive */
 @media (max-width: 1024px) {
     .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 1.5rem;
+        padding: 0 1rem;
     }
     
     .gallery-item {
@@ -527,12 +544,38 @@ footer {
     }
     
     .gallery-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 1.25rem;
+        padding: 0 0.75rem;
     }
     
     .gallery-item {
-        height: 250px;
-        border-radius: 20px;
+        height: 200px;
+        border-radius: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+    
+    .gallery-item {
+        height: 220px;
+        border-radius: 16px;
+    }
+    
+    .gallery-overlay {
+        padding: 2rem 1.5rem 1.5rem;
+    }
+    
+    .gallery-overlay h3 {
+        font-size: 1.2rem;
+    }
+    
+    .gallery-overlay p {
+        font-size: 0.9rem;
     }
 }
